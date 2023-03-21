@@ -35,6 +35,10 @@ a:hover{
     color: var(--text-highlight);
 }
 
+.nav-link.active{
+    color: var(--text-highlight);
+}
+
 button{
     background-color: var(--cards);
 }
@@ -49,6 +53,7 @@ ul{
 
 li{
     list-style: none;
+    padding: 10px 0;
 }
 
 body{
@@ -67,4 +72,5 @@ body{
     display: flex;
     flex-direction: column;
     align-items: start;
+    gap: 20px;
 }
