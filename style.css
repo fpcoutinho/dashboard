@@ -1,0 +1,29 @@
+:root.light {
+    --bg: #FFF;
+    --primary: #0F172A;
+    --secondary: #334155;
+    --text-highlight: #38BDF8;
+    --cards: #F4F6F8;
+    --cards-highlight: #EBF8FE;
+}
+
+:root.dark {
+    --bg: #0F172A;
+    --primary: #E1E7EF;
+    --secondary: #94A3B8;
+    --text-highlight: #0EA5E9;
+    --cards: #1E293B;
+    --cards-highlight: #152940;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+}
+
+.sidebar{
+    background-color: #0891b2;
+}
