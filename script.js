@@ -36,7 +36,7 @@ function setActive(navItem){
 function loadSection(href) {
     const main = document.querySelector('.main');
     main.innerHTML = '';
-    main.innerHTML = `<h1>${href}</h1>`;
+    main.innerHTML = href.innerHTML;
 }
 
 window.onload = () => {
