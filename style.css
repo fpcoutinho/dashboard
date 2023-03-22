@@ -62,23 +62,35 @@ body{
     margin: 0;
     height: 100vh;
     width: 100vw;
+}
+
+.main {
     display: grid;
     grid-template-columns: 1fr 5fr;
+    grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-areas: "sidebar topo"
+            "sidebar conteudo";
+    height: 100vh;
 }
 
 .sidebar{
+    grid-area: sidebar;
     background-color: var(--cards-highlight);
     padding-left: 30px;
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 20px;
+    grid-row-end: span sidebar;
 }
 
-.main{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.top {
+    grid-area: topo;
+    display: grid;
+    grid-template-rows: 1;
+    grid-template: auto 1fr / 2fr 1fr;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
 
 .conteudo{
@@ -86,6 +98,7 @@ body{
     grid-template-columns: 3fr 1fr;
     gap: 3rem;
     padding-inline: 10px;
+    grid-area: conteudo;
 }
 
 .esquerda{
@@ -149,25 +162,11 @@ body{
 }
 
 
-.top {
-    grid-row: 1;
-    grid-column: 1 / 3;
-    display: grid;
-    grid-row: auto 1fr;
-    grid-column: 2fr 1fr;
-    grid-template: auto 1fr / 2fr 1fr;
-    padding: 0.5rem 2rem;
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-}
-
 .search-container {
     grid-row: 1;
     grid-column: 1;
-    grid-area: 1/1/2/2;
-    display: -webkit-box;
     display: flex;
     gap: 1rem;
-    -webkit-box-align: center;
     align-items: center;
 }
 
@@ -177,7 +176,6 @@ body{
 }
 
 .search-container .search-input {
-    -webkit-box-flex: 1;
     flex: 1;
     flex: 1;
     border-radius: 20px;
@@ -194,13 +192,8 @@ body{
 .profile-container {
     grid-row: 1;
     grid-column: 2;
-    grid-area: 1/2/2/3;
-    display: -webkit-box;
-    display: flexbox;
     display: flex;
-    -webkit-box-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
     align-items: center;
     gap: 1rem;
 }
@@ -211,7 +204,6 @@ body{
 }
 
 .profile-container .bell-img:active {
-    -webkit-transform: scale(0.97);
     transform: scale(0.97);
 }
 
@@ -223,7 +215,6 @@ body{
 }
 
 .profile-container .user-profile:active {
-    -webkit-transform: scale(0.97);
     transform: scale(0.97);
 }
 
@@ -233,12 +224,10 @@ body{
 }
 
 .profile-container .user-name:active {
-    -webkit-transform: scale(0.97);
     transform: scale(0.97);
 }
 
 .welcome-container {
-    display: grid;
     display: grid;
     grid-row: 1fr 1fr;
     grid-column: auto 1fr;
@@ -270,11 +259,8 @@ body{
 }
 
 .btns-container {
-    display: -webkit-box;
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
-    -webkit-box-pack: center;
     justify-content: center;
     gap: 2rem;
 }
@@ -292,7 +278,6 @@ body{
 }
 
 .btns-container button:active {
-    -webkit-transform: scale(0.97);
     transform: scale(0.97);
     background-color: var(--cards-highlight);
     color: var(--text-highlight);
