@@ -1,10 +1,12 @@
 const navMenu = document.querySelectorAll('.nav-link');
+const botaoTema = document.querySelector(".botao-tema");
 
-document.querySelector(".botao-tema").addEventListener("click", switchTheme);
+botaoTema.addEventListener("click", switchTheme);
 function switchTheme() {
     const root = document.documentElement;
     const newTheme = root.className === 'light' ? 'dark' : 'light';
     root.className = newTheme;
+    console.log(newTheme);
 }
 
 function checkUserTheme(){
@@ -21,7 +23,7 @@ function checkUserTheme(){
 navMenu.forEach(link => {
     link.addEventListener('click', set => {
         setActive(link);
-        //loadSection(link.getAttribute('href'));
+        //loadSection(link.getAttribute('title'));
     });
 });
 
@@ -41,4 +43,5 @@ function loadSection(href) {
 
 window.onload = () => {
     checkUserTheme();
+    console.log(botaoTema);
 }
